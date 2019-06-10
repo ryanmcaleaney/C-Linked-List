@@ -42,6 +42,16 @@ void list::addNode(int data){//adds a new node to the end of the list
         }
 }
 
+void list::prependList(int data){//adds a node to the start of the list and makes it the head
+
+    node* newNode = createNode(data);//creates new node
+    node* heed = this->head;//creates temp node as head
+
+    newNode->next = heed;//sets the next for newNode to the head
+    this->head = newNode;//sets new head to newNode
+
+}
+
 void list::printList(){//prints the list
 
     node* heed = this->head;//sets traversal node to head
@@ -56,3 +66,4 @@ void list::printList(){//prints the list
         }
     }
 }
+

@@ -15,6 +15,7 @@ class list{//list class contains the head variable and the functions to use the 
         node* createNode(int data);
         void createHead(int data);
         void addNode(int data);
+        void prependList(int data);
         void printList();
     private:
         node *head;
