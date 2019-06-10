@@ -5,11 +5,13 @@ using namespace std;
 
 int main(){
 
-    list l;//creates a new list
-    l.createHead(2);
-    l.addNode(14);
-    l.prependList(200);
-    l.printList();
+    list *l = new list;;//creates a new list
+    l->createHead(0);
+    l->addNode(1);
+    l->addNode(3);
+    l->pop();
+    l->printList();
+    free(l);
 
     return 0;
 
