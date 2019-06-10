@@ -23,6 +23,10 @@ class list{//list class contains the head variable and the functions to use the 
         void createHead(int data);
         void addNode(int data);
         void prependList(int data);
+        void pop();
+        void insertByKey(int key, int data);
+        void removeByKey(int key);
+        void sortList();
         void printList();
     private:
         node *head;
