@@ -3,9 +3,16 @@
 
 class node{//node class contains integer data and points to the next node in the list
 
-    public:
+    private:
         int data;
-        node *next; 
+    public:
+        node *next;
+        void setData(const int& data){
+            this->data = data;
+        }
+        int getData()const{
+            return this->data;
+        }
 
 };
 
@@ -15,6 +22,7 @@ class list{//list class contains the head variable and the functions to use the 
         node* createNode(int data);
         void createHead(int data);
         void addNode(int data);
+        void prependList(int data);
         void printList();
     private:
         node *head;

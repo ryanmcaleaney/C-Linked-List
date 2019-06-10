@@ -4,7 +4,7 @@
 node* list::createNode(int data){//creates first node
 
     node *n = new node;//assigns memory to node
-    n->data = data;//assigns numerical data to node
+    n->setData(data);//assigns numerical data to node
 
     return n;//returns the node to variable
 
@@ -42,13 +42,23 @@ void list::addNode(int data){//adds a new node to the end of the list
         }
 }
 
+void list::prependList(int data){//adds a node to the start of the list and makes it the head
+
+    node* newNode = createNode(data);//creates new node
+    node* heed = this->head;//creates temp node as head
+
+    newNode->next = heed;//sets the next for newNode to the head
+    this->head = newNode;//sets new head to newNode
+
+}
+
 void list::printList(){//prints the list
 
     node* heed = this->head;//sets traversal node to head
     if(heed != NULL){//if the head is not null
         while(heed != NULL){// while the head is not null
 
-            std::cout << heed->data << " -> ";//output the data and an arrow to indicate the pointer
+            std::cout << heed->getData() << " -> ";//output the data and an arrow to indicate the pointer
             if(heed->next == NULL)//if the next node is null
                 std::cout << "NULL\n";//print null
             heed = heed->next;//traverse the list
@@ -56,3 +66,4 @@ void list::printList(){//prints the list
         }
     }
 }
+
