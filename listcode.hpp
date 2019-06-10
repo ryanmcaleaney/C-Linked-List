@@ -3,9 +3,16 @@
 
 class node{//node class contains integer data and points to the next node in the list
 
-    public:
+    private:
         int data;
-        node *next; 
+    public:
+        node *next;
+        void setData(const int& data){
+            this->data = data;
+        }
+        int getData()const{
+            return this->data;
+        }
 
 };
 

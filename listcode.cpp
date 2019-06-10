@@ -4,7 +4,7 @@
 node* list::createNode(int data){//creates first node
 
     node *n = new node;//assigns memory to node
-    n->data = data;//assigns numerical data to node
+    n->setData(data);//assigns numerical data to node
 
     return n;//returns the node to variable
 
@@ -58,7 +58,7 @@ void list::printList(){//prints the list
     if(heed != NULL){//if the head is not null
         while(heed != NULL){// while the head is not null
 
-            std::cout << heed->data << " -> ";//output the data and an arrow to indicate the pointer
+            std::cout << heed->getData() << " -> ";//output the data and an arrow to indicate the pointer
             if(heed->next == NULL)//if the next node is null
                 std::cout << "NULL\n";//print null
             heed = heed->next;//traverse the list
