@@ -6,10 +6,9 @@ using namespace std;
 int main(){
 
     list *l = new list;;//creates a new list
-    l->createHead(2);
-    l->addNode(1);
-    l->addNode(4);
-    l->addNode(3);
+    for(int i = 0; i < 20; i++){
+        l->prependList(i);
+    }
     l->sortList();
     l->printList();
     free(l);

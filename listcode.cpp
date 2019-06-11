@@ -46,10 +46,12 @@ void list::prependList(int data){//adds a node to the start of the list and make
 
     node* newNode = createNode(data);//creates new node
     node* heed = this->head;//creates temp node as head
-
+    if(heed == NULL){
+        addNode(data);
+    }else{
     newNode->next = heed;//sets the next for newNode to the head
     this->head = newNode;//sets new head to newNode
-
+    }
 }
 
 void list::pop(){//removes end of the list
