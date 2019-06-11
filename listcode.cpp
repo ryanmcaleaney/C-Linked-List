@@ -22,7 +22,7 @@ void list::addNode(int data){//adds a new node to the end of the list
     node *newNode = createNode(data);//creates newnode as a variable
 
     if(this->head == NULL){//checks if there is a head
-        this->createHead(data);//if there isn't a head create a new head
+        createHead(data);//if there isn't a head create a new head
         std::cout << "Head created since not already initialised" << std::endl;//lets the user know a new head was created
     }else{
             if(heed->next == NULL){//if the next node doesn't exist
@@ -57,7 +57,6 @@ void list::pop(){//removes end of the list
     node* temp;
     while(heed != NULL){
         if(heed->next == NULL){
-            temp->next = NULL;
             free(heed);
             break;
         }
@@ -112,8 +111,41 @@ void list::removeByKey(int key){//removes list element by key
 
 }
 
-void list::printList(){//prints the list
+int list::getLength(){//gets length of list
+    node* heed = this->head;//sets traversal node
+    int counter = 0;//makes counter 0
+    while(heed != NULL){
+        heed = heed->next;
+        counter+=1;//increments counter
 
+
+    }
+
+    return counter;//returns final counter value
+}
+
+void list::sortList(){//sorts list data smallest to biggest
+    node* heed = this->head;//sets traversal node
+    int temp;//temporary variable to make swap
+    int counter = 0;//counter to check when the whole list has been done
+
+    while(counter < this->getLength()){//if the counter is less than the length of the list keep looping
+        while(heed->next != NULL){//if the traversal variable next is null exit loop
+            if(heed->getData() > heed->next->getData()){//if head is greater than the next node
+                
+                temp = heed->getData();//temp = the heed data
+                heed->setData(heed->next->getData());//heed = nexts data
+                heed->next->setData(temp);//heed = temp data
+
+            }
+            heed = heed->next;//traversal
+        }
+    heed = this->head;//resets traversal variable to the start to loop again
+    counter+=1;//increments counter
+}
+}
+
+void list::printList(){//prints the list
     node* heed = this->head;//sets traversal node to head
     if(heed != NULL){//if the head is not null
         while(heed != NULL){// while the head is not null
