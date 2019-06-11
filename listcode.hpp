@@ -26,6 +26,7 @@ class list{//list class contains the head variable and the functions to use the 
         void pop();
         void insertByKey(int key, int data);
         void removeByKey(int key);
+        int getLength();
         void sortList();
         void printList();
     private:

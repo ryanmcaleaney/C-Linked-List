@@ -112,8 +112,41 @@ void list::removeByKey(int key){//removes list element by key
 
 }
 
-void list::printList(){//prints the list
+int list::getLength(){
+    node* heed = this->head;
+    int counter = 0;
+    while(heed != NULL){
+        heed = heed->next;
+        counter+=1;
 
+
+    }
+
+    return counter;
+}
+
+void list::sortList(){
+    node* heed = this->head;
+    int temp;
+    int counter = 0;
+
+    while(counter < this->getLength()){
+        while(heed->next != NULL){
+            if(heed->getData() > heed->next->getData()){
+                
+                temp = heed->getData();
+                heed->setData(heed->next->getData());
+                heed->next->setData(temp);
+
+            }
+            heed = heed->next;
+        }
+    heed = this->head;
+    counter+=1;
+}
+}
+
+void list::printList(){//prints the list
     node* heed = this->head;//sets traversal node to head
     if(heed != NULL){//if the head is not null
         while(heed != NULL){// while the head is not null
